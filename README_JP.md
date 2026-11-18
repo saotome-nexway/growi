@@ -58,6 +58,29 @@
 
 - [GROWI Docs: docker-compose](https://docs.growi.org/ja/admin-guide/getting-started/docker-compose.html) ([en](https://docs.growi.org/en/admin-guide/getting-started/docker-compose.html)/[ja](https://docs.growi.org/ja/admin-guide/getting-started/docker-compose.html))
 
+#### 初回セットアップ
+
+```bash
+git clone https://github.com/growilabs/growi-docker-compose.git
+cd growi-docker-compose
+docker compose up -d
+```
+
+起動後、http://localhost:3000 にアクセスしてください。初回は `/installer` で管理者アカウントを作成します。
+
+#### よく使うコマンド
+
+`growi-docker-compose` ディレクトリで実行します。
+
+| コマンド                         | 説明                                                         |
+| -------------------------------- | ------------------------------------------------------------ |
+| `docker compose up -d`           | 全コンテナをバックグラウンドで起動します。                   |
+| `docker compose ps -a`           | コンテナの状態を確認します。                                 |
+| `docker compose logs -f app`     | GROWI app のログを表示します。                               |
+| `docker compose stop`            | コンテナを停止します（データは保持されます）。               |
+| `docker compose down`            | コンテナを削除します（ボリュームのデータは保持されます）。   |
+| `docker compose down -v`         | コンテナとボリュームを削除します（**データも消えます**）。   |
+
 ### Helm (Experimental) でデプロイする
 
 - [GROWI Helm Chart](https://github.com/weseek/helm-charts/tree/master/charts/growi)
